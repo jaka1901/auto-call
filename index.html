@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Call</title>
+  <script>
+    window.onload = function() {
+      // Get the query string parameter "number"
+      const params = new URLSearchParams(window.location.search);
+      const phoneNumber = params.get("number");
+
+      if (phoneNumber) {
+        // Try to redirect to tel: link
+        window.location.href = "tel:" + phoneNumber;
+        // Also show manual link
+        document.getElementById("manual").innerHTML =
+          '<a href="tel:' + phoneNumber + '" style="font-size:18px; color:#0078D4; text-decoration:none;">Call ' + phoneNumber + '</a>';
+      } else {
+        document.getElementById("manual").innerHTML =
+          "<p>No phone number provided.</p>";
+      }
+    };
+  </script>
+</head>
+<body style="font-family:Arial, sans-serif; text-align:center; margin-top:100px;">
+  <h1>Preparing to call...</h1>
+  <div id="manual"></div>
+</body>
+</html>
