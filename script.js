@@ -72,34 +72,45 @@ function renderSignature(data) {
                   </table>
                 </td>
                 <td style="width: 315px; vertical-align:top;background-color:#F2F1F0;" align="left">
-                  <table width="100%" cellspacing="0" border="0" style="background-color: #ffffff;">
+                  <table width="100%" cellspacing="0" border="0" style="background-color: #ffffff; height: 124px;">
                     <tr>
                       <td style="padding: 0 10px 5px 20px">
                         <img src="${clean(data.signatureTitleImage)}" alt="Signature Title"
                           width="auto" height="65" style="display: block;margin: 0 0 0 0;">
                       </td>
                     </tr>
-                    <tr>
-                      <td style="padding: 0 10px 15px 20px">
-                        <a href="${clean(data.ctaLink)}" style="display: inline-block; text-align: left;">
-                          <img src="${clean(data.ctaImage)}"
-                            width="100%" height="35" alt="CTA"
-                            style="display:inline-block;border:0;outline:none;text-decoration:none;object-fit: contain;">
-                        </a>
-                      </td>
-                    </tr>
+                    ${
+                      data?.ctaLink
+                        ? `
+                          <tr>
+                            <td style="padding: 0 10px 15px 20px">
+                              <a href="${clean(data.ctaLink)}" target="_blank" style="display: inline-block; text-align: left;">
+                                <img src="https://www.heyjack.com.au/wp-content/uploads/2026/02/Button-CTA.png"
+                                  width="100%" height="35" alt="CTA"
+                                  style="display:inline-block;border:0;outline:none;text-decoration:none;object-fit: contain;">
+                              </a>
+                            </td>
+                          </tr>
+                        `
+                        : ''
+                    }
                   </table>
 
                   <table width="100%" cellspacing="0" border="0">
                     <tr>
                       <td style="background-color:#F2F1F0;padding: 15px 20px 0 20px;font-weight: 200;line-height: 1.1;" valign="top">
                         <p style="margin: 0 0 6px 0;">
-                          <a href="${clean(data.phone1Link)}" target="_blank" style="text-decoration: none; border:none; display:inline-block;">
-                            <img width="auto" height="9" src="${clean(data.phone1Image)}">
-                          </a>
-                          <img width="auto" height="10" src="https://www.heyjack.com.au/wp-content/uploads/2026/02/divider-3.png" style="margin: 0 1px -1px 2px;">
-                          <a href="${clean(data.phone2Link)}" target="_blank" style="text-decoration: none; border:none; display:inline-block;">
-                            <img width="auto" height="9" src="${clean(data.phone2Image)}">
+                          ${
+                            data?.phone1Link
+                              ?
+                                `<a href="${clean(data.phone1Link)}" target="_blank" style="text-decoration: none; border:none; display:inline-block;">
+                                  <img width="auto" height="9" src="${clean(data.phone1Image)}">
+                                </a>
+                                <img width="auto" height="10" src="https://www.heyjack.com.au/wp-content/uploads/2026/02/divider-3.png" style="margin: 0 1px -1px 2px;">`
+                              : ''
+                          }
+                          <a href="https://jaka1901.github.io/auto-call?number=+61390888077" target="_blank" style="text-decoration: none; border:none; display:inline-block;">
+                            <img width="auto" height="9" src="https://www.heyjack.com.au/wp-content/uploads/2026/02/phone-2-2.png">
                           </a>
                         </p>
                         <p style="margin: 0 0 6px 0;">
@@ -117,16 +128,16 @@ function renderSignature(data) {
                         <table width="100%" cellspacing="0" border="0" style="margin: 15px 0 0 0;">
                           <tr>
                             <td>
-                              <a href="https://www.instagram.com/heyjack_co" style="text-decoration: none; border:none; display:inline-block;">
+                              <a href="https://www.instagram.com/heyjack_co" style="text-decoration: none; border:none; display:inline-block;" target="_blank">
                                 <img style="margin: 0 0 -5px 0;" width="auto" height="20" src="https://www.heyjack.com.au/wp-content/uploads/2026/02/ig-2.png">
                               </a>
                               &nbsp;
-                              <a href="https://www.tiktok.com/@heyjack_co" style="text-decoration: none; border:none; display:inline-block;">
+                              <a href="https://www.tiktok.com/@heyjack_co" style="text-decoration: none; border:none; display:inline-block;" target="_blank">
                                 <img style="margin: 0 0 -5px 0;" width="auto" height="20" src="https://www.heyjack.com.au/wp-content/uploads/2026/02/tt-2.png">
                               </a>
                             </td>
                             <td style="text-align: right;">
-                              <a href="https://www.heyjack.com.au/">
+                              <a href="https://www.heyjack.com.au/" target="_blank">
                                 <img src="https://www.heyjack.com.au/wp-content/uploads/2026/02/hj-logo.png" width="auto" height="18" alt="Arrow" style="display:inline-block;border:0;">
                               </a>
                             </td>
