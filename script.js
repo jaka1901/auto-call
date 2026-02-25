@@ -72,7 +72,7 @@ function renderSignature(data) {
                   </table>
                 </td>
                 <td style="width: 315px; vertical-align:top;background-color:#F2F1F0;" align="left">
-                  <table width="315" cellspacing="0" border="0" style="width: 315px;background-color: #ffffff;">
+                  <table width="315" cellspacing="0" border="0" style="width: 315px;background-color: #ffffff;height: 124px;">
                     <tr>
                       <td width="315" style="width: 315px; padding: 0 10px 5px 20px">
                         <img src="${clean(data.signatureTitleImage)}" alt="Signature Title"
